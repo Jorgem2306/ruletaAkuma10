@@ -58,7 +58,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 100;
+    z-index: 300;
 }
 
 .ambient-glow {
@@ -230,7 +230,7 @@ body {
    ========================================================================== */
 .main-layout {
     display: grid;
-    grid-template-columns: 390px 1fr;
+    grid-template-columns: 420px 1fr;
     gap: 30px;
     align-items: center;
 }
@@ -373,33 +373,39 @@ body {
 /* Botones de Acciones Rápidas */
 .list-actions {
     display: flex;
-    gap: 8px;
-    justify-content: space-between;
+    gap: 6px;
+    width: 100%;
+    align-items: center;
 }
 
 .list-actions button {
-    flex: 1;
+    flex: 1 1 0px;
+    min-width: 0;
     justify-content: center;
 }
 
 .text-btn {
     border: none;
     font-family: inherit;
-    font-size: 0.82rem;
+    font-size: 0.77rem;
     font-weight: 800;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 8px;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 4px;
     border-radius: var(--radius-md);
     transition: all 0.2s ease;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .text-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
 }
 
 /* 1. Botón Mezclar (Azul Océano) */
@@ -625,9 +631,9 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
