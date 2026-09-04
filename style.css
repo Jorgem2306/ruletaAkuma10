@@ -120,18 +120,41 @@ body {
     align-items: center;
 }
 
-.brand-text h1 {
-    font-size: 1.55rem;
-    font-weight: 900;
+.brand h1,
+.brand-text h1,
+.wave-title {
+    font-family: 'Permanent Marker', 'Sedgwick Ave Display', cursive, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 400;
     color: #ffffff;
-    letter-spacing: -0.3px;
-    line-height: 1.1;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    transform: skewX(-7deg) rotate(-1.5deg);
+    padding: 6px 8px;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
 }
 
-.brand-text h1 span {
-    color: #fef08a;
-    text-shadow: 0 2px 8px rgba(234, 88, 12, 0.5);
+.wave-title span {
+    display: inline-block;
+    color: #ffffff;
+    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.45), 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: waveJump 1.6s infinite ease-in-out;
+    animation-delay: calc(0.08s * var(--i, 0));
+    will-change: transform;
+}
+
+@keyframes waveJump {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        transform: translateY(-11px) scale(1.08, 0.96);
+    }
+    50% {
+        transform: translateY(0) scale(1);
+    }
 }
 
 .brand-text p {
@@ -233,6 +256,7 @@ body {
     grid-template-columns: 420px 1fr;
     gap: 30px;
     align-items: center;
+    position: relative;
 }
 
 .glass-card {
@@ -253,6 +277,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition: opacity 0.35s ease, transform 0.4s ease;
+}
+
+body.is-spinning-mode .options-panel {
+    opacity: 0;
+    transform: translateX(-40px);
+    pointer-events: none;
 }
 
 .panel-header {
@@ -466,6 +497,12 @@ body {
     justify-content: center;
     gap: 26px;
     position: relative;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: center center;
+}
+
+body.is-spinning-mode .wheel-stage {
+    transform: translateX(-225px) scale(1.18);
 }
 
 .wheel-wrapper {
@@ -553,6 +590,14 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    transition: opacity 0.35s ease, transform 0.4s ease, visibility 0.35s ease;
+}
+
+body.is-spinning-mode .spin-control {
+    opacity: 0;
+    transform: translateY(24px) scale(0.92);
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .spin-button {
@@ -631,9 +676,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.28);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -663,24 +706,31 @@ body {
 }
 
 .winner-icon-box {
-    width: 82px;
-    height: 82px;
+    width: 115px;
+    height: 115px;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: bounce 1.4s infinite alternate;
+    animation: bounceHop 0.45s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .winner-avatar-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 6px 14px rgba(225, 29, 72, 0.45));
+    filter: none;
 }
 
-@keyframes bounce {
-    from { transform: translateY(0); }
-    to { transform: translateY(-8px); }
+@keyframes bounceHop {
+    0% {
+        transform: translateY(0) scale(1, 1);
+    }
+    50% {
+        transform: translateY(-14px) scale(0.97, 1.04);
+    }
+    100% {
+        transform: translateY(-20px) scale(1.03, 0.97);
+    }
 }
 
 .winner-tag {

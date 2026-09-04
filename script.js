@@ -25,6 +25,13 @@ let isSpinning = false;
 let soundEnabled = JSON.parse(localStorage.getItem("roulette_sound") ?? "true");
 let lastWinningItem = null;
 
+// Cargar imagen central de la ruleta (Cara de Bad Bunny)
+const centerFaceImg = new Image();
+centerFaceImg.src = "carabadbunny.png";
+centerFaceImg.onload = () => {
+    drawWheel();
+};
+
 function loadSavedEntries() {
     try {
         const saved = JSON.parse(localStorage.getItem("roulette_entries"));
@@ -361,18 +368,17 @@ function clearAllItems() {
 // ==========================================================================
 // RENDERIZADO HIGH-DPI DE LA RULETA EN CANVAS
 // ==========================================================================
+const BASE_WHEEL_SIZE = 440;
+
 function setupHiDPI() {
     const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    const size = rect.width || 440;
-
-    canvas.width = size * dpr;
-    canvas.height = size * dpr;
-    ctx.scale(dpr, dpr);
+    canvas.width = BASE_WHEEL_SIZE * dpr;
+    canvas.height = BASE_WHEEL_SIZE * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 
 function drawWheel() {
-    const size = canvas.getBoundingClientRect().width || 440;
+    const size = BASE_WHEEL_SIZE;
     const radius = size / 2;
     const activeItems = getActiveItems();
     const numItems = activeItems.length;
@@ -468,32 +474,26 @@ function drawWheel() {
     }
     ctx.restore();
 
-    // 3. Centro Perno Dorado con Gema
+    // 3. Centro: Imagen pura de Bad Bunny (carabadbunny) sin círculos ni bordes amarillos
     ctx.save();
-
-    const goldGrad = ctx.createLinearGradient(radius - 26, radius - 26, radius + 26, radius + 26);
-    goldGrad.addColorStop(0, "#ffffff");
-    goldGrad.addColorStop(0.4, "#fbbf24");
-    goldGrad.addColorStop(1, "#d97706");
-
-    ctx.beginPath();
-    ctx.arc(radius, radius, 26, 0, 2 * Math.PI);
-    ctx.fillStyle = goldGrad;
-    ctx.fill();
-    ctx.strokeStyle = "#ffffff";
-    ctx.lineWidth = 2.5;
-    ctx.stroke();
-
-    const gemGrad = ctx.createRadialGradient(radius - 3, radius - 3, 2, radius, radius, 14);
-    gemGrad.addColorStop(0, "#e11d48");
-    gemGrad.addColorStop(0.6, "#9f1239");
-    gemGrad.addColorStop(1, "#4c0519");
-
-    ctx.beginPath();
-    ctx.arc(radius, radius, 14, 0, 2 * Math.PI);
-    ctx.fillStyle = gemGrad;
-    ctx.fill();
-
+    if (centerFaceImg.complete && centerFaceImg.naturalWidth > 0) {
+        const targetSize = 125; // Tamaño ampliado para destacar aún más
+        const aspect = centerFaceImg.naturalWidth / centerFaceImg.naturalHeight;
+        let drawW = targetSize;
+        let drawH = targetSize;
+        if (aspect >= 1) {
+            drawH = targetSize / aspect;
+        } else {
+            drawW = targetSize * aspect;
+        }
+        ctx.drawImage(
+            centerFaceImg,
+            radius - drawW / 2,
+            radius - drawH / 2,
+            drawW,
+            drawH
+        );
+    }
     ctx.restore();
 }
 
@@ -507,6 +507,7 @@ function spin() {
     getAudioContext();
     isSpinning = true;
     spinBtn.disabled = true;
+    document.body.classList.add("is-spinning-mode");
     // Duración fija del giro de 10 segundos
     const duration = 10000; // 10000 ms = 10 segundos
 
@@ -545,8 +546,9 @@ function spin() {
         if (progress < 1) {
             requestAnimationFrame(animate);
         } else {
-            // Detener música de fondo al terminar el giro
+            // Detener música de fondo y restaurar vista al terminar el giro
             stopAllTracks();
+            document.body.classList.remove("is-spinning-mode");
             isSpinning = false;
             spinBtn.disabled = false;
             optionsEditor.setAttribute("contenteditable", "true");
