@@ -686,18 +686,22 @@ body.is-spinning-mode .spin-control {
     color: #ffffff;
     border: 2px solid #ffffff;
     font-family: inherit;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 900;
-    letter-spacing: 1px;
-    padding: 16px 48px;
+    letter-spacing: 0.5px;
+    padding: 13px 28px;
+    width: auto;
+    max-width: fit-content;
     border-radius: var(--radius-full);
     cursor: pointer;
-    box-shadow: 0 10px 28px rgba(225, 29, 72, 0.45), 0 3px 12px rgba(234, 88, 12, 0.35);
-    display: flex;
+    box-shadow: 0 8px 24px rgba(225, 29, 72, 0.45), 0 3px 10px rgba(234, 88, 12, 0.35);
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 10px;
     transition: all 0.25s ease;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
 }
 
 .spin-button:hover:not(:disabled) {
@@ -895,50 +899,200 @@ body.is-spinning-mode .spin-control {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (MÓVILES & TABLETS)
    ========================================================================== */
 @media (max-width: 920px) {
-    .main-layout {
-        grid-template-columns: 1fr;
-        justify-items: center;
+    .app-wrapper {
+        padding: 16px 14px 32px;
+        gap: 18px;
     }
 
-    .options-panel {
+    .main-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
         width: 100%;
-        max-width: 480px;
+    }
+
+    /* La ruleta aparece primero en móviles/tablets para jugar inmediatamente */
+    .wheel-stage {
+        order: 1;
+        width: 100%;
+        gap: 20px;
+    }
+
+    /* El panel de opciones se ubica debajo */
+    .options-panel {
+        order: 2;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px 18px;
     }
 
     .wheel-wrapper {
-        width: 380px;
-        height: 380px;
+        width: min(400px, 86vw);
+        height: min(400px, 86vw);
+    }
+
+    /* En móviles el giro no desplaza la ruleta hacia la izquierda para no sacarla de pantalla */
+    body.is-spinning-mode .wheel-stage {
+        transform: scale(1.05);
+    }
+
+    body.is-spinning-mode .options-panel {
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
     .app-wrapper {
-        padding: 16px 12px 28px;
+        padding: 12px 10px 24px;
+        gap: 14px;
+    }
+
+    .app-header {
+        padding: 0 2px;
+        gap: 8px;
+    }
+
+    .wave-title {
+        font-size: clamp(1.45rem, 6.8vw, 2rem);
+        padding: 4px 6px;
+    }
+
+    .volume-control-wrapper {
+        padding: 3px 8px 3px 3px;
+        gap: 6px;
+    }
+
+    .icon-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .icon-btn svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    #volume-slider {
+        width: 55px;
+    }
+
+    #volume-val {
+        font-size: 0.75rem;
+        min-width: 26px;
     }
 
     .wheel-wrapper {
-        width: 310px;
-        height: 310px;
+        width: min(340px, 88vw);
+        height: min(340px, 88vw);
+    }
+
+    .pointer-arrow {
+        border-top-width: 20px;
+        border-left-width: 11px;
+        border-right-width: 11px;
     }
 
     .spin-button {
-        font-size: 1.1rem;
-        padding: 14px 34px;
+        font-size: 1.05rem;
+        padding: 11px 22px;
+        width: auto;
+        max-width: fit-content;
+        gap: 8px;
     }
 
-    .brand-text h1 {
-        font-size: 1.3rem;
+    .spin-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .options-panel {
+        padding: 16px 14px;
+        gap: 12px;
+    }
+
+    .animated-panel-title {
+        font-size: 1.2rem;
+    }
+
+    .options-editor {
+        height: 210px;
+        min-height: 160px;
+        font-size: 0.92rem;
+        padding: 10px 12px;
+        line-height: 1.6;
+    }
+
+    /* Botones de acción en cuadrícula 2x2 para pulsar fácil en pantallas pequeñas */
+    .list-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .text-btn {
+        font-size: 0.8rem;
+        padding: 9px 6px;
+        gap: 4px;
+    }
+
+    .text-btn svg {
+        width: 13px;
+        height: 13px;
+    }
+
+    /* Modal de Ganador en móviles */
+    .party-modal {
+        padding: 24px 16px;
+        gap: 12px;
+        border-radius: var(--radius-lg);
+    }
+
+    .winner-icon-box {
+        width: 90px;
+        height: 90px;
+    }
+
+    .winner-name {
+        font-size: clamp(1.4rem, 6.2vw, 1.85rem);
     }
 
     .modal-actions-grid {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 
     .modal-action-btn {
         flex-direction: row;
-        padding: 10px;
+        justify-content: center;
+        padding: 11px 12px;
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+
+    .modal-action-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .wave-title {
+        font-size: 1.35rem;
+    }
+
+    .wheel-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+
+    .spin-button {
+        font-size: 0.98rem;
+        padding: 12px 20px;
     }
 }
