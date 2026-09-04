@@ -14,11 +14,94 @@ const PALETTE = [
     "#4338ca"  // Twilight Indigo
 ];
 
-const DEFAULT_ITEMS = [];
+const RETOS_PRESET = [
+    'El "yo nunca, nunca"',
+    'Pide al chat un consejo para superar el desamor',
+    'Actúa una escena dramática con otra persona de la llamada',
+    'Di el consejo mas tóxico que se te ocurra',
+    'Confiesa tu locura más grande por el/la ex',
+    'Mensaje provocador al aire',
+    'Canción q te recuerde de tu ex',
+    'Canta una canción de desamor',
+    'Recrea un drama',
+    'Pregunta incomoda sobre su vida amorosa',
+    'Cuenta lo más tóxico que hayas hecho en una relación.',
+    'Mensaje atrevido para el/la ex',
+    'Pide al chat el consejo más tóxico',
+    'Cuenta una experiencia dolida',
+    'Cuenta la anécdota más intensa o vergonzosa que tengas con un ex',
+    'DM atrevido',
+    'Dime 3 cosas que hiciste x amor q te arrepientes',
+    'Describe como seria tu cita catastrófica',
+    'Baile huayno',
+    'Comparte una experiencia romántica o atrevida que nunca hayas contado. Si no lo haces, ¡doble shot!',
+    'Haz como si estuvieras hablando con tu crush en voz alta, exagerando todo. Si no lo haces, ¡castigo!',
+    'Deja que el público o chat te hagan preguntas subidas de tono. Si no respondes, ¡shot obligatorio!',
+    'Deja que el grupo decida un reto para ti, sin poder negarte.',
+    'Di el mayor secreto que guardas sobre tus relaciones pasadas o presentes. Si no lo haces, ¡triple trago!',
+    'Pretende que estás en una cita con alguien de la llamada e improvisen una conversación coqueta.',
+    'Cada participante debe decir algo más atrevido que el anterior. El que se quede sin ideas, ¡bebe!',
+    'Deja que alguien elija un mensaje que deberás enviar a una persona al azar de tu lista.',
+    'Di quién en la llamada te parece más atractivo. Si no te atreves, ¡doble castigo!',
+    'Alguien te pregunta algo comprometedor y solo puedes responder "sí" o "no". Si no lo haces, ¡bebe!',
+    'Sube algo con doble sentido en tus historias o redes sociales. Si no lo haces, ¡bebida doble!',
+    'Envía un mensaje atrevido a un contacto de tus redes. Si no lo haces, ¡castigo triple!',
+    'Di en voz alta quién es tu crush (puede ser famoso o alguien conocido). Si no lo haces, ¡shot!',
+    'Busca en redes a tu crush o ex y describe algo gracioso o extraño de su perfil.',
+    'Escribe algo absurdo o picante en tu historia de Instagram.',
+    'Adopta una pose sexy frente a la cámara por 10 segundos. Si te da pena, ¡shot!',
+    'Imitar el movimiento más sensual que hayas visto en una película o serie. Si no logras impresionar, ¡bebe!',
+    'Ponte algo que normalmente nunca usarías en público.',
+    'Haz una actuación breve como si estuvieras en una escena romántica exagerada con alguien de la llamada. Si no lo haces, ¡shot!',
+    'Di una frase al azar (puede ser algo absurdo) usando tu tono más seductor. Si no lo logras, ¡bebida!',
+    'Simula cómo actuarías si estuvieras en una cita terrible. Si no haces reír, ¡castigo!',
+    'Haz tu mejor intento de imitar una escena icónica de película romántica con alguien del grupo.',
+    'Hazle a cada participante una pregunta subidita de tono que deben contestar o beber.',
+    'Cuenta algo atrevido que hayas pensado recientemente. Si no lo haces, toma un shot.',
+    'Envía un mensaje sugerente a alguien que te guste. Si no te atreves, ¡doble shot!',
+    '¿Qué es lo más loco o atrevido que has hecho en una cita? Si no contestas, ¡bebe tres tragos!',
+    'Di algo que nunca hayas contado a nadie, relacionado con tus relaciones. Si no lo haces, ¡shot obligatorio!',
+    'Deja que alguien del grupo te haga una pregunta personal y contesta con total honestidad. Si no lo haces, ¡castigo doble!',
+    'Escribele a tu crush'
+];
+
+const VERDAD_PRESET = [
+    '¿Te han propuesto salir o algo más en un stream? ¿Aceptaste?',
+    'Si tuvieras que hacer un stream en pareja, ¿a quién elegirías y por qué?',
+    '¿Te ha pasado que alguien en el chat te pone nervioso/a porque te atrae?',
+    '¿Has sentido celos de un streamer porque le tiran más la onda que a ti?',
+    '¿Qué es lo más atrevido que harías en stream si estuvieras seguro/a de no ser baneado/a?',
+    '¿Quién de los presentes crees que sería tu mejor pareja en la vida real?',
+    '¿Alguna vez has coqueteado con un espectador o seguidor?',
+    '¿Qué harías si otro streamer te propusiera algo más que una colaboración profesional?',
+    '¿Cuál es el DM más atrevido que has recibido de un fan?',
+    '¿Has pensado en hacer contenido "para adultos" o algo más sensual fuera de Twitch?',
+    'Alguna vez has hecho un stream sin ropa debajo de lo que llevabas puesto?',
+    '¿Has fantaseado con alguien de tu comunidad o con otro streamer?',
+    'Si te dieran total libertad en Twitch, ¿harías contenido explícito?',
+    '¿Te han ofrecido dinero o regalos para hacer algo inapropiado en privado?',
+    '¿Qué harías si un/a seguidor/a atractivo/a te invitara a salir después de un stream?',
+    '¿Alguna vez has flirteado descaradamente en vivo?',
+    '¿Has hecho algo "subido de tono" pensando que la cámara estaba apagada y no lo estaba?',
+    '¿Qué es lo más atrevido que alguien te ha pedido hacer en un stream?',
+    'Si un streamer que te atrae físicamente te propusiera un "after stream" íntimo, ¿aceptarías?',
+    '¿Cuál es tu fetiche secreto que crees que alguien podría adivinar viendo tus directos?',
+    'Alguna vez has tenido pensamientos sexuales sobre un colaborador o colaboradora?',
+    '¿Te excita la idea de que te miren mientras haces stream?',
+    '¿Cuál es el lugar más atrevido donde has tenido una experiencia íntima?',
+    '¿Has hecho sexting con alguien que conociste gracias a tu canal?',
+    '¿Qué streamer elegirías para protagonizar contenido para adultos contigo?',
+    '¿Alguna vez alguien te ha mandado fotos explícitas sin que las pidieras? ¿Qué hiciste?',
+    '¿Has usado tu popularidad como streamer para ligar o tener encuentros casuales?',
+    'Si pudieras hacer un stream "para adultos" con un tema específico, ¿cuál sería?',
+    '¿Cuál es la experiencia más atrevida que has vivido relacionada con tu comunidad?',
+    '¿Te animarías a hacer un directo temático con contenido sugerente si no hubiera restricciones?'
+];
 
 // ==========================================================================
 // ESTADO GLOBAL
 // ==========================================================================
+let currentTemplate = localStorage.getItem("roulette_active_template") || "retos";
 let entries = loadSavedEntries();
 let currentAngle = 0;
 let isSpinning = false;
@@ -36,7 +119,6 @@ function loadSavedEntries() {
     try {
         const saved = JSON.parse(localStorage.getItem("roulette_entries"));
         if (Array.isArray(saved) && saved.length > 0) {
-            // Si lo guardado era solo la lista inicial de números de prueba 1..12, limpiarla
             const isOldNumberList = saved.every((item, idx) => {
                 const text = typeof item === "string" ? item : item.text;
                 return text === String(idx + 1);
@@ -46,7 +128,48 @@ function loadSavedEntries() {
             }
         }
     } catch (e) {}
-    return DEFAULT_ITEMS;
+    const preset = currentTemplate === "verdad" ? VERDAD_PRESET : RETOS_PRESET;
+    return preset.map(text => ({ text, struck: false }));
+}
+
+function loadTemplate(type) {
+    if (isSpinning) return;
+    currentTemplate = type;
+    localStorage.setItem("roulette_active_template", type);
+
+    const preset = type === "verdad" ? VERDAD_PRESET : RETOS_PRESET;
+    entries = preset.map(text => ({ text, struck: false }));
+
+    updateTemplateUI();
+    renderEditor();
+}
+
+function updateTemplateUI() {
+    const selector = document.getElementById("template-selector");
+    const tplRetosBtn = document.getElementById("tpl-retos-btn");
+    const tplVerdadBtn = document.getElementById("tpl-verdad-btn");
+    const panelTitleText = document.getElementById("panel-title-text");
+
+    if (selector) {
+        selector.classList.toggle("is-verdad", currentTemplate === "verdad");
+    }
+
+    if (panelTitleText) {
+        panelTitleText.classList.remove("title-pop");
+        void panelTitleText.offsetWidth; // Reflow
+        panelTitleText.classList.add("title-pop");
+        panelTitleText.innerText = currentTemplate === "verdad" ? "Verdades" : "Retos";
+    }
+
+    if (tplRetosBtn && tplVerdadBtn) {
+        if (currentTemplate === "verdad") {
+            tplVerdadBtn.classList.add("active");
+            tplRetosBtn.classList.remove("active");
+        } else {
+            tplRetosBtn.classList.add("active");
+            tplVerdadBtn.classList.remove("active");
+        }
+    }
 }
 
 // Obtener solo las opciones activas (no tachadas)
@@ -255,8 +378,73 @@ function updateUIState() {
     localStorage.setItem("roulette_entries", JSON.stringify(entries));
 }
 
+// ==========================================================================
+// SISTEMA DE HISTORIAL (DESHACER / REHACER: CTRL+Z / CTRL+Y)
+// ==========================================================================
+let historyStack = [];
+let historyIndex = -1;
+let isApplyingHistory = false;
+let inputDebounceTimer = null;
+
+function pushHistoryState() {
+    if (isApplyingHistory) return;
+
+    const currentStateStr = JSON.stringify(entries);
+
+    // Evitar registrar estados duplicados consecutivos
+    if (historyIndex >= 0 && historyIndex < historyStack.length) {
+        if (JSON.stringify(historyStack[historyIndex]) === currentStateStr) {
+            return;
+        }
+    }
+
+    // Si estábamos en medio del historial y se realiza un nuevo cambio, podar el futuro
+    if (historyIndex < historyStack.length - 1) {
+        historyStack = historyStack.slice(0, historyIndex + 1);
+    }
+
+    historyStack.push(JSON.parse(currentStateStr));
+    if (historyStack.length > 60) {
+        historyStack.shift();
+    }
+    historyIndex = historyStack.length - 1;
+}
+
+function undo() {
+    if (isSpinning || historyIndex <= 0) return;
+    historyIndex--;
+    isApplyingHistory = true;
+    entries = JSON.parse(JSON.stringify(historyStack[historyIndex]));
+    renderEditor(false);
+    isApplyingHistory = false;
+}
+
+function redo() {
+    if (isSpinning || historyIndex >= historyStack.length - 1) return;
+    historyIndex++;
+    isApplyingHistory = true;
+    entries = JSON.parse(JSON.stringify(historyStack[historyIndex]));
+    renderEditor(false);
+    isApplyingHistory = false;
+}
+
+// Atajos globales de teclado para Deshacer (Ctrl+Z) y Rehacer (Ctrl+Y / Ctrl+Shift+Z)
+document.addEventListener("keydown", (e) => {
+    if (isSpinning) return;
+
+    if (e.ctrlKey || e.metaKey) {
+        if (e.key.toLowerCase() === "z" && !e.shiftKey) {
+            e.preventDefault();
+            undo();
+        } else if (e.key.toLowerCase() === "y" || (e.key.toLowerCase() === "z" && e.shiftKey)) {
+            e.preventDefault();
+            redo();
+        }
+    }
+});
+
 // Renderiza todo el contenido visual en el editor
-function renderEditor() {
+function renderEditor(saveHistory = true) {
     optionsEditor.innerHTML = "";
     entries.forEach((entry, index) => {
         const div = document.createElement("div");
@@ -270,6 +458,10 @@ function renderEditor() {
 
     updateUIState();
     drawWheel();
+
+    if (saveHistory) {
+        pushHistoryState();
+    }
 }
 
 // Lee el editor cuando el usuario escribe directamente
@@ -286,16 +478,18 @@ function readEditor() {
         }
     } else {
         childNodes.forEach(node => {
-            const text = (node.textContent || "").trim();
-            if (text.length > 0) {
-                const isStruck = (node.nodeType === 1 && (
-                    node.classList.contains("struck-line") ||
-                    node.tagName === "S" ||
-                    node.tagName === "DEL" ||
-                    node.style.textDecoration?.includes("line-through")
-                ));
+            const rawText = node.textContent || "";
+            const isStruck = (node.nodeType === 1 && (
+                node.classList.contains("struck-line") ||
+                node.tagName === "S" ||
+                node.tagName === "DEL" ||
+                node.style.textDecoration?.includes("line-through")
+            ));
+
+            const subLines = rawText.split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
+            subLines.forEach(text => {
                 lines.push({ text, struck: isStruck });
-            }
+            });
         });
     }
 
@@ -307,24 +501,56 @@ function readEditor() {
 optionsEditor.addEventListener("input", () => {
     if (!isSpinning) {
         readEditor();
+        clearTimeout(inputDebounceTimer);
+        inputDebounceTimer = setTimeout(() => {
+            pushHistoryState();
+        }, 300);
     }
 });
 
-// Pegado directo de listas: divide por líneas limpias
+// Pegado directo de listas: reemplaza lo seleccionado o la lista completa si se seleccionó todo
 optionsEditor.addEventListener("paste", (e) => {
     e.preventDefault();
     const pasteData = (e.clipboardData || window.clipboardData)?.getData("text") || "";
-    if (pasteData) {
-        const newLines = pasteData
-            .split(/\r?\n/)
-            .map(l => l.trim())
-            .filter(l => l.length > 0);
+    if (!pasteData) return;
 
-        if (newLines.length > 0) {
-            const newEntries = newLines.map(text => ({ text, struck: false }));
-            entries.push(...newEntries);
-            renderEditor();
-        }
+    const selection = window.getSelection();
+    const selectedText = selection ? selection.toString().replace(/\r?\n/g, "").trim() : "";
+    const currentText = optionsEditor.innerText.replace(/\r?\n/g, "").trim();
+
+    const isAllOrMostSelected = selectedText.length > 0 && (
+        selectedText === currentText || 
+        selectedText.length >= currentText.length * 0.9
+    );
+
+    const newLines = pasteData
+        .split(/\r?\n/)
+        .map(l => l.trim())
+        .filter(l => l.length > 0);
+
+    if (isAllOrMostSelected || entries.length === 0 || !optionsEditor.innerText.trim()) {
+        // Reemplazo total con las nuevas opciones pegadas
+        entries = newLines.map(text => ({ text, struck: false }));
+        renderEditor();
+    } else if (selection && selection.rangeCount > 0) {
+        // Reemplazar la selección actual o insertar en el cursor
+        const range = selection.getRangeAt(0);
+        range.deleteContents();
+
+        const textNode = document.createTextNode(pasteData);
+        range.insertNode(textNode);
+
+        range.setStartAfter(textNode);
+        range.setEndAfter(textNode);
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        readEditor();
+        pushHistoryState();
+    } else {
+        // Fallback: reemplazo completo
+        entries = newLines.map(text => ({ text, struck: false }));
+        renderEditor();
     }
 });
 
@@ -697,6 +923,7 @@ function stopConfetti() {
 // ==========================================================================
 window.addEventListener("DOMContentLoaded", () => {
     updateSoundUI();
+    updateTemplateUI();
     setupHiDPI();
     renderEditor();
 });
