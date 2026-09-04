@@ -78,29 +78,36 @@ let confettiParticles = [];
 let confettiAnimationId = null;
 
 // ==========================================================================
-// AUDIO & LISTA DE MÚSICA ALEATORIA (musicfondobaibe.m4a, musicfondotiti.m4a)
+// AUDIO & LISTA DE MÚSICA EN ORDEN SECUENCIAL
 // ==========================================================================
-const TRACK_FILES = ["musicfondobaibe.m4a", "musicfondotiti.m4a"];
+const TRACK_FILES = [
+    "musicfondobaibe.m4a",
+    "musicfondocallaita.m4a",
+    "musicfondochambea.m4a",
+    "musicfondomirame.m4a",
+    "musicfondonuevayol.m4a",
+    "musicfondopensaba.m4a",
+    "musicfondoperreosola.m4a",
+    "musicfondosafaera.m4a",
+    "musicfondotiti.m4a"
+];
 const TRACKS = TRACK_FILES.map(src => {
     const audio = new Audio(src);
     audio.preload = "auto";
     return audio;
 });
+let currentTrackIndex = 0;
 let currentTrack = null;
-let lastTrackIndex = -1;
 
 function pickNextTrack() {
     if (TRACKS.length === 0) return null;
-    if (TRACKS.length === 1) return TRACKS[0];
 
-    // Selecciona una pista distinta a la que sonó en el giro anterior
-    let nextIndex;
-    do {
-        nextIndex = Math.floor(Math.random() * TRACKS.length);
-    } while (nextIndex === lastTrackIndex);
+    const track = TRACKS[currentTrackIndex];
 
-    lastTrackIndex = nextIndex;
-    return TRACKS[nextIndex];
+    // Avanzar a la siguiente canción en orden y volver a la primera al llegar al final
+    currentTrackIndex = (currentTrackIndex + 1) % TRACKS.length;
+
+    return track;
 }
 
 // Factor de ganancia maestro (50% max) para normalizar el audio y evitar que sature a volumen alto
@@ -508,12 +515,16 @@ function spin() {
     isSpinning = true;
     spinBtn.disabled = true;
     document.body.classList.add("is-spinning-mode");
-    // Duración fija del giro de 10 segundos
-    const duration = 10000; // 10000 ms = 10 segundos
 
     // Detener cualquier reproducción previa y seleccionar canción aleatoria sin repetir la anterior
     stopAllTracks();
     currentTrack = pickNextTrack();
+
+    // Obtener la duración exacta de la pista de audio seleccionada
+    let duration = 10000;
+    if (currentTrack && currentTrack.duration && !isNaN(currentTrack.duration) && isFinite(currentTrack.duration) && currentTrack.duration > 0) {
+        duration = currentTrack.duration * 1000;
+    }
 
     // Reproducir música aleatoria sincronizada para este giro
     if (currentTrack) {
@@ -525,9 +536,10 @@ function spin() {
     const numItems = activeItems.length;
     const arc = (2 * Math.PI) / numItems;
 
-    // Giros adecuados para una duración de 10 segundos (12 a 16 vueltas completas)
-    const spinsBase = 12;
-    const extraRotations = (spinsBase + Math.random() * 4) * (2 * Math.PI);
+    // Calcular vueltas proporcionales a la duración del audio para mantener una velocidad óptima
+    const durSec = duration / 1000;
+    const spinsBase = Math.max(6, Math.round(durSec * 1.3));
+    const extraRotations = (spinsBase + Math.random() * 3) * (2 * Math.PI);
     const randomStop = Math.random() * (2 * Math.PI);
     const totalRotation = extraRotations + randomStop;
 
