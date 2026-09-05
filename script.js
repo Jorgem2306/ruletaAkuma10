@@ -15,98 +15,96 @@ const PALETTE = [
 ];
 
 const RETOS_PRESET = [
-    'El "yo nunca, nunca"',
+    'El "yo nunca, nunca" (haz 3 rondas con el grupo)',
     'Pide al chat un consejo para superar el desamor',
-    'Actúa una escena dramática con otra persona de la llamada',
-    'Di el consejo mas tóxico que se te ocurra',
-    'Confiesa tu locura más grande por el/la ex',
-    'Mensaje provocador al aire',
-    'Canción q te recuerde de tu ex',
-    'Canta una canción de desamor',
-    'Recrea un drama',
-    'Pregunta incomoda sobre su vida amorosa',
-    'Cuenta lo más tóxico que hayas hecho en una relación.',
-    'Mensaje atrevido para el/la ex',
-    'Pide al chat el consejo más tóxico',
-    'Cuenta una experiencia dolida',
-    'Cuenta la anécdota más intensa o vergonzosa que tengas con un ex',
-    'DM atrevido',
-    'Dime 3 cosas que hiciste x amor q te arrepientes',
-    'Describe como seria tu cita catastrófica',
-    'Baile huayno',
-    'Comparte una experiencia romántica o atrevida que nunca hayas contado. Si no lo haces, ¡doble shot!',
-    'Haz como si estuvieras hablando con tu crush en voz alta, exagerando todo. Si no lo haces, ¡castigo!',
-    'Deja que el público o chat te hagan preguntas subidas de tono. Si no respondes, ¡shot obligatorio!',
-    'Deja que el grupo decida un reto para ti, sin poder negarte.',
-    'Di el mayor secreto que guardas sobre tus relaciones pasadas o presentes. Si no lo haces, ¡triple trago!',
-    'Pretende que estás en una cita con alguien de la llamada e improvisen una conversación coqueta.',
-    'Cada participante debe decir algo más atrevido que el anterior. El que se quede sin ideas, ¡bebe!',
-    'Deja que alguien elija un mensaje que deberás enviar a una persona al azar de tu lista.',
-    'Di quién en la llamada te parece más atractivo. Si no te atreves, ¡doble castigo!',
-    'Alguien te pregunta algo comprometedor y solo puedes responder "sí" o "no". Si no lo haces, ¡bebe!',
-    'Sube algo con doble sentido en tus historias o redes sociales. Si no lo haces, ¡bebida doble!',
-    'Envía un mensaje atrevido a un contacto de tus redes. Si no lo haces, ¡castigo triple!',
-    'Di en voz alta quién es tu crush (puede ser famoso o alguien conocido). Si no lo haces, ¡shot!',
-    'Busca en redes a tu crush o ex y describe algo gracioso o extraño de su perfil.',
-    'Escribe algo absurdo o picante en tu historia de Instagram.',
-    'Adopta una pose sexy frente a la cámara por 10 segundos. Si te da pena, ¡shot!',
-    'Imitar el movimiento más sensual que hayas visto en una película o serie. Si no logras impresionar, ¡bebe!',
-    'Ponte algo que normalmente nunca usarías en público.',
-    'Haz una actuación breve como si estuvieras en una escena romántica exagerada con alguien de la llamada. Si no lo haces, ¡shot!',
-    'Di una frase al azar (puede ser algo absurdo) usando tu tono más seductor. Si no lo logras, ¡bebida!',
-    'Simula cómo actuarías si estuvieras en una cita terrible. Si no haces reír, ¡castigo!',
-    'Haz tu mejor intento de imitar una escena icónica de película romántica con alguien del grupo.',
-    'Hazle a cada participante una pregunta subidita de tono que deben contestar o beber.',
-    'Cuenta algo atrevido que hayas pensado recientemente. Si no lo haces, toma un shot.',
-    'Envía un mensaje sugerente a alguien que te guste. Si no te atreves, ¡doble shot!',
-    '¿Qué es lo más loco o atrevido que has hecho en una cita? Si no contestas, ¡bebe tres tragos!',
-    'Di algo que nunca hayas contado a nadie, relacionado con tus relaciones. Si no lo haces, ¡shot obligatorio!',
-    'Deja que alguien del grupo te haga una pregunta personal y contesta con total honestidad. Si no lo haces, ¡castigo doble!',
-    'Escribele a tu crush'
+    'Actúa una escena dramática de telenovela con alguien de la llamada',
+    'Di el consejo más tóxico y divertido que se te ocurra',
+    'Confiesa la mayor locura que hiciste por amor',
+    'Dedica un mensaje provocador al aire sin decir nombres',
+    'Canta a todo pulmón el coro de una canción de despecho',
+    'Describe cómo sería tu cita absolutamente catastrófica',
+    'Baila 20 segundos con estilo exagerado y divertido',
+    'Comparte una anécdota vergonzosa que nunca antes hayas contado',
+    'Haz como si hablaras con tu crush por teléfono exagerando todo',
+    'Deja que el chat te haga 2 preguntas incómodas y respóndelas sin filtro',
+    'Deja que el grupo elija un castigo o reto para ti sin poder negarte',
+    'Muestra la última foto guardada en tu galería del celular',
+    'Improvisa una conversación de primera cita coqueta con alguien de la llamada',
+    'Ronda rápida: cada persona dice algo atrevido; el que dude 3 segundos, bebe o castigo',
+    'Envía un emoji de fuego o corazón a la 3ra persona en tus chats recientes',
+    'Di en voz alta quién de la llamada te parece más atractivo/a',
+    'Pregunta comprometedora del grupo: solo puedes contestar "SÍ" o "NO"',
+    'Publica una encuesta absurda o picante en tus historias de Instagram',
+    'Adopta una pose de modelo frente a la cámara durante 10 segundos',
+    'Imita el movimiento de baile más sensual que recuerdes',
+    'Ponte una prenda al revés o un accesorio ridículo por el resto de la ronda',
+    'Lee en voz alta con tono seductor una noticia o receta aburrida',
+    'Haz una llamada de 10 segundos a un amigo y dile que te vas a casar mañana',
+    'Intenta hacer reír al grupo en 30 segundos sin hablar, solo gestos',
+    'Muestra tu historial de búsqueda reciente de YouTube o TikTok',
+    'Dile un piropo original y exagerado a alguien del grupo',
+    'Haz 10 sentadillas o flexiones en vivo',
+    'Imita a un streamer o personaje famoso hasta que adivinen quién es',
+    'Habla con acento extranjero durante las próximas 2 rondas',
+    'Muestra el meme más random o bizarro que tengas en el celular',
+    'Cuenta el sueño más extraño que hayas tenido recientemente',
+    'Tómate una foto haciendo una cara graciosa y compártela',
+    'Di 3 cualidades positivas y 1 crítica constructiva a alguien de la llamada',
+    'Envía un mensaje de voz cantando a un contacto al azar',
+    'Bebe un trago o shot sin usar las manos',
+    'Escribe un mensaje en rima dedicado al chat',
+    'Muestra el objeto más raro o curioso que tengas en tu habitación',
+    'Haz una declaración de amor épica y cómica a un objeto inanimado'
 ];
 
 const VERDAD_PRESET = [
-    '¿Te han propuesto salir o algo más en un stream? ¿Aceptaste?',
-    'Si tuvieras que hacer un stream en pareja, ¿a quién elegirías y por qué?',
-    '¿Te ha pasado que alguien en el chat te pone nervioso/a porque te atrae?',
-    '¿Has sentido celos de un streamer porque le tiran más la onda que a ti?',
-    '¿Qué es lo más atrevido que harías en stream si estuvieras seguro/a de no ser baneado/a?',
-    '¿Quién de los presentes crees que sería tu mejor pareja en la vida real?',
-    '¿Alguna vez has coqueteado con un espectador o seguidor?',
-    '¿Qué harías si otro streamer te propusiera algo más que una colaboración profesional?',
-    '¿Cuál es el DM más atrevido que has recibido de un fan?',
-    '¿Has pensado en hacer contenido "para adultos" o algo más sensual fuera de Twitch?',
-    'Alguna vez has hecho un stream sin ropa debajo de lo que llevabas puesto?',
-    '¿Has fantaseado con alguien de tu comunidad o con otro streamer?',
-    'Si te dieran total libertad en Twitch, ¿harías contenido explícito?',
-    '¿Te han ofrecido dinero o regalos para hacer algo inapropiado en privado?',
-    '¿Qué harías si un/a seguidor/a atractivo/a te invitara a salir después de un stream?',
-    '¿Alguna vez has flirteado descaradamente en vivo?',
-    '¿Has hecho algo "subido de tono" pensando que la cámara estaba apagada y no lo estaba?',
-    '¿Qué es lo más atrevido que alguien te ha pedido hacer en un stream?',
-    'Si un streamer que te atrae físicamente te propusiera un "after stream" íntimo, ¿aceptarías?',
-    '¿Cuál es tu fetiche secreto que crees que alguien podría adivinar viendo tus directos?',
-    'Alguna vez has tenido pensamientos sexuales sobre un colaborador o colaboradora?',
-    '¿Te excita la idea de que te miren mientras haces stream?',
-    '¿Cuál es el lugar más atrevido donde has tenido una experiencia íntima?',
-    '¿Has hecho sexting con alguien que conociste gracias a tu canal?',
-    '¿Qué streamer elegirías para protagonizar contenido para adultos contigo?',
-    '¿Alguna vez alguien te ha mandado fotos explícitas sin que las pidieras? ¿Qué hiciste?',
-    '¿Has usado tu popularidad como streamer para ligar o tener encuentros casuales?',
-    'Si pudieras hacer un stream "para adultos" con un tema específico, ¿cuál sería?',
-    '¿Cuál es la experiencia más atrevida que has vivido relacionada con tu comunidad?',
-    '¿Te animarías a hacer un directo temático con contenido sugerente si no hubiera restricciones?'
+    '¿Te han propuesto salir o tener algo en privado a través de un stream?',
+    'Si tuvieras que hacer un stream 24 horas en pareja, ¿a quién elegirías y por qué?',
+    '¿Alguna vez alguien del chat o comunidad te ha puesto realmente nervioso/a por atracción?',
+    '¿Has sentido celos de otro streamer o creador por su éxito o carisma?',
+    '¿Qué es lo más atrevido que harías en vivo si supieras que no te van a banear?',
+    '¿Quién de los presentes en la llamada crees que sería tu mejor pareja en la vida real?',
+    '¿Alguna vez has coqueteado con un espectador por mensaje privado?',
+    '¿Cuál es el mensaje directo (DM) más atrevido o descarado que has recibido?',
+    '¿Has pensado seriamente en crear contenido para adultos?',
+    '¿Alguna vez has hecho stream sin pantalones o con ropa inapropiada fuera de cuadro?',
+    '¿Has tenido un crush secreto con alguien de tu comunidad o un colega streamer?',
+    '¿Te han ofrecido dinero o regalos costosos a cambio de favores privados?',
+    '¿Qué harías si un seguidor muy atractivo te invita a salir en privado?',
+    '¿Alguna vez has dejado el micrófono o cámara prendidos por error en un momento comprometedor?',
+    '¿Qué es lo más vergonzoso que te ha pasado en una primera cita?',
+    '¿Has stalkeado el perfil de tu ex desde una cuenta secundaria o falsa?',
+    '¿Cuál es tu mayor fantasía romántica que nunca le has contado a nadie?',
+    '¿Alguna vez te has arrepentido inmediatamente después de besar a alguien?',
+    '¿Has mentido en vivo para quedar bien o evitar polémica con la audiencia?',
+    '¿Cuál es la mentira más grande que le has dicho a tus padres sobre tus salidas?',
+    '¿Quién fue tu primer amor platónico famoso y sigues sintiendo algo por él/ella?',
+    '¿Qué cualidad física es lo primero que miras en una persona que te gusta?',
+    '¿Has tenido una experiencia paranormal o inexplicable que te haya dado terror?',
+    '¿Cuál es el rumor más falso o divertido que han inventado sobre ti?',
+    '¿Te has quedado dormido/a en una cita o llamada importante?',
+    '¿Cuál ha sido tu peor borrachera y qué fue lo más vergonzoso que hiciste?',
+    '¿Alguna vez has fingido interés en los gustos de alguien solo para agradarle?',
+    '¿Qué secreto tuyo destruiría tu reputación si saliera a la luz?',
+    '¿Has vuelto con un ex sabiendo que era una pésima idea?',
+    '¿Cuál es el hábito más raro o curioso que tienes cuando estás a solas?'
 ];
 
 // ==========================================================================
 // ESTADO GLOBAL
 // ==========================================================================
 let currentTemplate = localStorage.getItem("roulette_active_template") || "retos";
-let entries = loadSavedEntries();
+let entries = loadSavedEntries(currentTemplate);
 let currentAngle = 0;
 let isSpinning = false;
 let soundEnabled = JSON.parse(localStorage.getItem("roulette_sound") ?? "true");
 let lastWinningItem = null;
+
+// Registro de elementos ya seleccionados para evitar repeticiones antes de completar el ciclo
+let playedHistory = {
+    retos: [],
+    verdad: []
+};
 
 // Cargar imagen central de la ruleta (Cara de Bad Bunny)
 const centerFaceImg = new Image();
@@ -115,31 +113,63 @@ centerFaceImg.onload = () => {
     drawWheel();
 };
 
-function loadSavedEntries() {
+function getStorageKey(template) {
+    return `roulette_entries_${template}`;
+}
+
+function loadSavedEntries(template = currentTemplate) {
+    const key = getStorageKey(template);
     try {
-        const saved = JSON.parse(localStorage.getItem("roulette_entries"));
-        if (Array.isArray(saved) && saved.length > 0) {
-            const isOldNumberList = saved.every((item, idx) => {
-                const text = typeof item === "string" ? item : item.text;
-                return text === String(idx + 1);
-            });
-            if (!isOldNumberList) {
-                return saved.map(e => (typeof e === "string" ? { text: e, struck: false } : e));
+        const savedRaw = localStorage.getItem(key);
+        if (savedRaw) {
+            const saved = JSON.parse(savedRaw);
+            if (Array.isArray(saved) && saved.length > 0) {
+                const isOldNumberList = saved.every((item, idx) => {
+                    const text = typeof item === "string" ? item : item.text;
+                    return text === String(idx + 1);
+                });
+                if (!isOldNumberList) {
+                    return saved.map(e => (typeof e === "string" ? { text: e, struck: false } : { text: e.text, struck: Boolean(e.struck) }));
+                }
             }
         }
+    } catch (e) {
+        console.warn("Error loading entries from localStorage:", e);
+    }
+
+    // Si no existía para este template específico, cargar su preset inicial limpio
+    const preset = template === "verdad" ? VERDAD_PRESET : RETOS_PRESET;
+    const initial = preset.map(text => ({ text, struck: false }));
+    try {
+        localStorage.setItem(key, JSON.stringify(initial));
     } catch (e) {}
-    const preset = currentTemplate === "verdad" ? VERDAD_PRESET : RETOS_PRESET;
-    return preset.map(text => ({ text, struck: false }));
+    return initial;
+}
+
+function saveCurrentEntries() {
+    const key = getStorageKey(currentTemplate);
+    try {
+        localStorage.setItem(key, JSON.stringify(entries));
+    } catch (e) {
+        console.warn("Error saving entries to localStorage:", e);
+    }
 }
 
 function loadTemplate(type) {
     if (isSpinning) return;
+    if (currentTemplate === type) return;
+    
+    // 1. Guardar estado actual del template que se está dejando
+    saveCurrentEntries();
+    
+    // 2. Cambiar al nuevo template
     currentTemplate = type;
     localStorage.setItem("roulette_active_template", type);
 
-    const preset = type === "verdad" ? VERDAD_PRESET : RETOS_PRESET;
-    entries = preset.map(text => ({ text, struck: false }));
+    // 3. Cargar las entradas guardadas del nuevo template con sus tachados intactos
+    entries = loadSavedEntries(type);
 
+    // 4. Actualizar interfaz
     updateTemplateUI();
     renderEditor();
 }
@@ -172,7 +202,7 @@ function updateTemplateUI() {
     }
 }
 
-// Obtener solo las opciones activas (no tachadas)
+// Obtener solo las opciones activas (no tachadas y con texto válido)
 function getActiveItems() {
     return entries.filter(e => !e.struck && e.text.trim().length > 0).map(e => e.text.trim());
 }
@@ -224,16 +254,12 @@ let currentTrack = null;
 
 function pickNextTrack() {
     if (TRACKS.length === 0) return null;
-
     const track = TRACKS[currentTrackIndex];
-
-    // Avanzar a la siguiente canción en orden y volver a la primera al llegar al final
     currentTrackIndex = (currentTrackIndex + 1) % TRACKS.length;
-
     return track;
 }
 
-// Factor de ganancia maestro (50% max) para normalizar el audio y evitar que sature a volumen alto
+// Factor de ganancia maestro (50% max) para normalizar el audio
 const MASTER_GAIN = 0.50; 
 
 let currentVolume = parseFloat(localStorage.getItem("roulette_volume") ?? "0.75");
@@ -302,7 +328,6 @@ function playWinSound() {
     }
 }
 
-// Actualizar Interfaz de Sonido y Slider
 function updateSoundUI() {
     updateTracksVolume();
 
@@ -327,11 +352,9 @@ function updateSoundUI() {
     }
 }
 
-// Botón de silenciar / activar (sin reiniciar posición de la música)
 soundBtn.addEventListener("click", () => {
     soundEnabled = !soundEnabled;
     if (soundEnabled) {
-        // Al reactivar el sonido, restaurar el nivel anterior
         currentVolume = lastNonZeroVolume || 0.75;
     }
     localStorage.setItem("roulette_sound", JSON.stringify(soundEnabled));
@@ -339,7 +362,6 @@ soundBtn.addEventListener("click", () => {
     updateSoundUI();
 });
 
-// Control deslizante de volumen (ajusta el volumen en tiempo real sin reiniciar)
 if (volumeSlider) {
     volumeSlider.addEventListener("input", (e) => {
         const val = parseInt(e.target.value, 10);
@@ -359,15 +381,15 @@ if (volumeSlider) {
 }
 
 // ==========================================================================
-// GESTIÓN DEL EDITOR CONTENTEDITABLE & SINCRONIZACIÓN
+// GESTIÓN DEL EDITOR & SINCRONIZACIÓN CON LOCALSTORAGE
 // ==========================================================================
 function updateUIState() {
     const active = getActiveItems();
     const total = entries.filter(e => e.text.trim().length > 0).length;
-    const struckCount = entries.filter(e => e.struck).length;
+    const struckCount = entries.filter(e => e.struck && e.text.trim().length > 0).length;
 
     if (struckCount > 0) {
-        itemsCountBadge.innerText = `${active.length} activas (${total} total)`;
+        itemsCountBadge.innerText = `${active.length} activas (${struckCount} tachadas)`;
         if (restoreBtn) restoreBtn.style.display = "inline-flex";
     } else {
         itemsCountBadge.innerText = `${active.length} ${active.length === 1 ? 'opción' : 'opciones'}`;
@@ -375,60 +397,74 @@ function updateUIState() {
     }
 
     spinBtn.disabled = active.length < 2 || isSpinning;
-    localStorage.setItem("roulette_entries", JSON.stringify(entries));
+    saveCurrentEntries();
 }
 
 // ==========================================================================
 // SISTEMA DE HISTORIAL (DESHACER / REHACER: CTRL+Z / CTRL+Y)
 // ==========================================================================
-let historyStack = [];
-let historyIndex = -1;
+let historyStacks = { retos: [], verdad: [] };
+let historyIndices = { retos: -1, verdad: -1 };
 let isApplyingHistory = false;
 let inputDebounceTimer = null;
 
 function pushHistoryState() {
     if (isApplyingHistory) return;
 
+    const tpl = currentTemplate;
+    if (!historyStacks[tpl]) historyStacks[tpl] = [];
+    
+    let stack = historyStacks[tpl];
+    let idx = historyIndices[tpl] ?? -1;
+
     const currentStateStr = JSON.stringify(entries);
 
-    // Evitar registrar estados duplicados consecutivos
-    if (historyIndex >= 0 && historyIndex < historyStack.length) {
-        if (JSON.stringify(historyStack[historyIndex]) === currentStateStr) {
+    if (idx >= 0 && idx < stack.length) {
+        if (JSON.stringify(stack[idx]) === currentStateStr) {
             return;
         }
     }
 
-    // Si estábamos en medio del historial y se realiza un nuevo cambio, podar el futuro
-    if (historyIndex < historyStack.length - 1) {
-        historyStack = historyStack.slice(0, historyIndex + 1);
+    if (idx < stack.length - 1) {
+        stack = stack.slice(0, idx + 1);
     }
 
-    historyStack.push(JSON.parse(currentStateStr));
-    if (historyStack.length > 60) {
-        historyStack.shift();
+    stack.push(JSON.parse(currentStateStr));
+    if (stack.length > 60) {
+        stack.shift();
     }
-    historyIndex = historyStack.length - 1;
+    historyStacks[tpl] = stack;
+    historyIndices[tpl] = stack.length - 1;
 }
 
 function undo() {
-    if (isSpinning || historyIndex <= 0) return;
-    historyIndex--;
+    const tpl = currentTemplate;
+    const stack = historyStacks[tpl] || [];
+    let idx = historyIndices[tpl] ?? -1;
+
+    if (isSpinning || idx <= 0) return;
+    idx--;
+    historyIndices[tpl] = idx;
     isApplyingHistory = true;
-    entries = JSON.parse(JSON.stringify(historyStack[historyIndex]));
+    entries = JSON.parse(JSON.stringify(stack[idx]));
     renderEditor(false);
     isApplyingHistory = false;
 }
 
 function redo() {
-    if (isSpinning || historyIndex >= historyStack.length - 1) return;
-    historyIndex++;
+    const tpl = currentTemplate;
+    const stack = historyStacks[tpl] || [];
+    let idx = historyIndices[tpl] ?? -1;
+
+    if (isSpinning || idx >= stack.length - 1) return;
+    idx++;
+    historyIndices[tpl] = idx;
     isApplyingHistory = true;
-    entries = JSON.parse(JSON.stringify(historyStack[historyIndex]));
+    entries = JSON.parse(JSON.stringify(stack[idx]));
     renderEditor(false);
     isApplyingHistory = false;
 }
 
-// Atajos globales de teclado para Deshacer (Ctrl+Z) y Rehacer (Ctrl+Y / Ctrl+Shift+Z)
 document.addEventListener("keydown", (e) => {
     if (isSpinning) return;
 
@@ -446,12 +482,12 @@ document.addEventListener("keydown", (e) => {
 // Renderiza todo el contenido visual en el editor
 function renderEditor(saveHistory = true) {
     optionsEditor.innerHTML = "";
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
         const div = document.createElement("div");
         div.textContent = entry.text;
         if (entry.struck) {
             div.className = "struck-line";
-            div.title = "Opción tachada (clic para reactivar)";
+            div.title = "Opción tachada (doble clic para reactivar)";
         }
         optionsEditor.appendChild(div);
     });
@@ -464,16 +500,16 @@ function renderEditor(saveHistory = true) {
     }
 }
 
-// Lee el editor cuando el usuario escribe directamente
+// Lee el editor preservando el estado tachado de las líneas existentes
 function readEditor() {
-    const lines = [];
+    const rawLines = [];
     const childNodes = Array.from(optionsEditor.childNodes);
 
     if (childNodes.length === 0) {
         const raw = optionsEditor.innerText;
         if (raw.trim()) {
             raw.split(/\r?\n/).forEach(l => {
-                if (l.trim()) lines.push({ text: l.trim(), struck: false });
+                if (l.trim()) rawLines.push({ text: l.trim(), isExplicitStruck: false });
             });
         }
     } else {
@@ -483,17 +519,40 @@ function readEditor() {
                 node.classList.contains("struck-line") ||
                 node.tagName === "S" ||
                 node.tagName === "DEL" ||
-                node.style.textDecoration?.includes("line-through")
+                Boolean(node.style.textDecoration && node.style.textDecoration.includes("line-through"))
             ));
 
             const subLines = rawText.split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
             subLines.forEach(text => {
-                lines.push({ text, struck: isStruck });
+                rawLines.push({ text, isExplicitStruck: isStruck });
             });
         });
     }
 
-    entries = lines;
+    // Mantener los estados de tachado de las líneas previas para no perderlos al editar
+    const prevStruckCounts = new Map();
+    entries.forEach(e => {
+        if (e.struck) {
+            const key = e.text.trim();
+            prevStruckCounts.set(key, (prevStruckCounts.get(key) || 0) + 1);
+        }
+    });
+
+    const newEntries = [];
+    rawLines.forEach(item => {
+        const key = item.text.trim();
+        const availableStruck = prevStruckCounts.get(key) || 0;
+        
+        let shouldBeStruck = item.isExplicitStruck;
+        if (!shouldBeStruck && availableStruck > 0) {
+            shouldBeStruck = true;
+            prevStruckCounts.set(key, availableStruck - 1);
+        }
+
+        newEntries.push({ text: item.text, struck: shouldBeStruck });
+    });
+
+    entries = newEntries;
     updateUIState();
     drawWheel();
 }
@@ -508,54 +567,40 @@ optionsEditor.addEventListener("input", () => {
     }
 });
 
-// Pegado directo de listas: reemplaza lo seleccionado o la lista completa si se seleccionó todo
+// Pegado directo de listas
 optionsEditor.addEventListener("paste", (e) => {
     e.preventDefault();
     const pasteData = (e.clipboardData || window.clipboardData)?.getData("text") || "";
     if (!pasteData) return;
-
-    const selection = window.getSelection();
-    const selectedText = selection ? selection.toString().replace(/\r?\n/g, "").trim() : "";
-    const currentText = optionsEditor.innerText.replace(/\r?\n/g, "").trim();
-
-    const isAllOrMostSelected = selectedText.length > 0 && (
-        selectedText === currentText || 
-        selectedText.length >= currentText.length * 0.9
-    );
 
     const newLines = pasteData
         .split(/\r?\n/)
         .map(l => l.trim())
         .filter(l => l.length > 0);
 
-    if (isAllOrMostSelected || entries.length === 0 || !optionsEditor.innerText.trim()) {
-        // Reemplazo total con las nuevas opciones pegadas
+    const selection = window.getSelection();
+    const selectedText = selection ? selection.toString().replace(/\r?\n/g, "").trim() : "";
+    const currentText = optionsEditor.innerText.replace(/\r?\n/g, "").trim();
+
+    const isAllSelected = selectedText.length > 0 && (
+        selectedText === currentText || 
+        selectedText.length >= currentText.length * 0.9
+    );
+
+    if (isAllSelected || entries.length === 0 || !optionsEditor.innerText.trim()) {
+        // Reemplazo completo
         entries = newLines.map(text => ({ text, struck: false }));
         renderEditor();
-    } else if (selection && selection.rangeCount > 0) {
-        // Reemplazar la selección actual o insertar en el cursor
-        const range = selection.getRangeAt(0);
-        range.deleteContents();
-
-        const textNode = document.createTextNode(pasteData);
-        range.insertNode(textNode);
-
-        range.setStartAfter(textNode);
-        range.setEndAfter(textNode);
-        selection.removeAllRanges();
-        selection.addRange(range);
-
+    } else {
+        // Añadir o insertar en cursor
+        document.execCommand("insertText", false, pasteData);
         readEditor();
         pushHistoryState();
-    } else {
-        // Fallback: reemplazo completo
-        entries = newLines.map(text => ({ text, struck: false }));
-        renderEditor();
     }
 });
 
-// Clic en una línea tachada para reactivarla
-optionsEditor.addEventListener("click", (e) => {
+// Doble clic en una línea tachada para reactivarla intencionalmente (evita desmarcar por error al hacer clic)
+optionsEditor.addEventListener("dblclick", (e) => {
     const target = e.target;
     if (target && target.classList && target.classList.contains("struck-line")) {
         const text = target.textContent.trim();
@@ -588,12 +633,15 @@ function sortItems() {
 function restoreStruckItems() {
     if (isSpinning) return;
     entries.forEach(e => e.struck = false);
+    // Reiniciar también el historial de repetición
+    playedHistory[currentTemplate] = [];
     renderEditor();
 }
 
 function clearAllItems() {
     if (isSpinning) return;
     entries = [];
+    playedHistory[currentTemplate] = [];
     renderEditor();
     optionsEditor.focus();
 }
@@ -631,7 +679,7 @@ function drawWheel() {
         ctx.font = "800 16px 'Outfit', sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText("Escribe opciones para girar", radius, radius);
+        ctx.fillText("Todas las opciones tachadas o vacías", radius, radius);
         return;
     }
 
@@ -648,12 +696,10 @@ function drawWheel() {
         ctx.arc(radius, radius, wheelRadius, angle, angle + arc);
         ctx.closePath();
 
-        // Color del sector limpio y vibrante (sin sombras oscuras en el borde)
         const baseColor = PALETTE[index % PALETTE.length];
         ctx.fillStyle = baseColor;
         ctx.fill();
 
-        // Borde divisor blanco limpio
         ctx.strokeStyle = "rgba(255, 255, 255, 0.7)";
         ctx.lineWidth = 2.5;
         ctx.stroke();
@@ -669,15 +715,15 @@ function drawWheel() {
         ctx.shadowBlur = 3;
 
         let fontSize = 15;
-        if (numItems > 20) fontSize = 11;
-        else if (numItems > 12) fontSize = 13;
-        else if (numItems > 8) fontSize = 14;
+        if (numItems > 24) fontSize = 10;
+        else if (numItems > 16) fontSize = 12;
+        else if (numItems > 10) fontSize = 13.5;
 
         ctx.font = `800 ${fontSize}px 'Outfit', sans-serif`;
 
         let displayText = item;
-        if (displayText.length > 20) {
-            displayText = displayText.substring(0, 18) + "...";
+        if (displayText.length > 22) {
+            displayText = displayText.substring(0, 20) + "...";
         }
 
         ctx.fillText(displayText, wheelRadius - 22, 0);
@@ -686,7 +732,7 @@ function drawWheel() {
         ctx.restore();
     });
 
-    // 2. Anillo Exterior Blanco Puro con Remaches
+    // 2. Anillo Exterior Blanco con Remaches
     ctx.save();
     ctx.beginPath();
     ctx.arc(radius, radius, wheelRadius, 0, 2 * Math.PI);
@@ -707,10 +753,10 @@ function drawWheel() {
     }
     ctx.restore();
 
-    // 3. Centro: Imagen pura de Bad Bunny (carabadbunny) sin círculos ni bordes amarillos
+    // 3. Centro: Imagen pura de Bad Bunny
     ctx.save();
     if (centerFaceImg.complete && centerFaceImg.naturalWidth > 0) {
-        const targetSize = 125; // Tamaño ampliado para destacar aún más
+        const targetSize = 125;
         const aspect = centerFaceImg.naturalWidth / centerFaceImg.naturalHeight;
         let drawW = targetSize;
         let drawH = targetSize;
@@ -731,7 +777,7 @@ function drawWheel() {
 }
 
 // ==========================================================================
-// ANIMACIÓN DE GIRO Y FÍSICA
+// ANIMACIÓN DE GIRO SIN REPETICIÓN & FÍSICA SUAVE
 // ==========================================================================
 function spin() {
     const activeItems = getActiveItems();
@@ -742,17 +788,15 @@ function spin() {
     spinBtn.disabled = true;
     document.body.classList.add("is-spinning-mode");
 
-    // Detener cualquier reproducción previa y seleccionar canción aleatoria sin repetir la anterior
+    // Detener audio previo y reproducir siguiente pista musical
     stopAllTracks();
     currentTrack = pickNextTrack();
 
-    // Obtener la duración exacta de la pista de audio seleccionada
     let duration = 10000;
     if (currentTrack && currentTrack.duration && !isNaN(currentTrack.duration) && isFinite(currentTrack.duration) && currentTrack.duration > 0) {
         duration = currentTrack.duration * 1000;
     }
 
-    // Reproducir música aleatoria sincronizada para este giro
     if (currentTrack) {
         currentTrack.volume = getEffectiveVolume();
         currentTrack.currentTime = 0;
@@ -762,12 +806,45 @@ function spin() {
     const numItems = activeItems.length;
     const arc = (2 * Math.PI) / numItems;
 
-    // Calcular vueltas proporcionales a la duración del audio para mantener una velocidad óptima
+    // --- ALGORITMO ANTI-REPETICIÓN ---
+    // Buscar opciones activas que aún no hayan salido en este ciclo
+    const historyList = playedHistory[currentTemplate] || [];
+    let candidates = activeItems.filter(item => !historyList.includes(item));
+    
+    // Si ya salieron todas las opciones activas, reiniciar el ciclo
+    if (candidates.length === 0) {
+        playedHistory[currentTemplate] = [];
+        candidates = [...activeItems];
+    }
+
+    // Elegir aleatoriamente entre las candidatas que no han salido
+    const targetItem = candidates[Math.floor(Math.random() * candidates.length)];
+    const targetIndex = activeItems.indexOf(targetItem);
+    
+    // Registrar en el historial de este ciclo
+    if (!playedHistory[currentTemplate]) playedHistory[currentTemplate] = [];
+    playedHistory[currentTemplate].push(targetItem);
+
+    // Calcular ángulo exacto para que el sector objetivo quede alineado bajo el puntero superior (3*PI/2)
+    const pointerAngle = (3 * Math.PI) / 2;
+    // Añadir un pequeño margen aleatorio dentro del sector (25% a 75%) para realismo natural
+    const sectorOffset = 0.25 + Math.random() * 0.5;
+    const targetAngleAtPointer = pointerAngle - (targetIndex + sectorOffset) * arc;
+
+    // Normalizar ángulos en rango [0, 2*PI)
+    const TWO_PI = 2 * Math.PI;
+    const targetAngleMod = ((targetAngleAtPointer % TWO_PI) + TWO_PI) % TWO_PI;
+    const currentAngleMod = ((currentAngle % TWO_PI) + TWO_PI) % TWO_PI;
+
+    let deltaAngle = targetAngleMod - currentAngleMod;
+    if (deltaAngle <= 0) {
+        deltaAngle += TWO_PI;
+    }
+
+    // Giros completos proporcionales a la duración del audio
     const durSec = duration / 1000;
     const spinsBase = Math.max(6, Math.round(durSec * 1.3));
-    const extraRotations = (spinsBase + Math.random() * 3) * (2 * Math.PI);
-    const randomStop = Math.random() * (2 * Math.PI);
-    const totalRotation = extraRotations + randomStop;
+    const totalRotation = deltaAngle + spinsBase * TWO_PI;
 
     const startTime = performance.now();
     const initialAngle = currentAngle;
@@ -784,7 +861,6 @@ function spin() {
         if (progress < 1) {
             requestAnimationFrame(animate);
         } else {
-            // Detener música de fondo y restaurar vista al terminar el giro
             stopAllTracks();
             document.body.classList.remove("is-spinning-mode");
             isSpinning = false;
@@ -798,10 +874,12 @@ function spin() {
 }
 
 // ==========================================================================
-// CÁLCULO DE GANADOR Y MODAL CON 3 OPCIONES
+// CÁLCULO DE GANADOR Y MODAL CON 3 ACCIONES
 // ==========================================================================
 function handleWinner() {
     const activeItems = getActiveItems();
+    if (activeItems.length === 0) return;
+
     const arc = (2 * Math.PI) / activeItems.length;
     const pointerAngle = (3 * Math.PI) / 2;
     const normalizedAngle = (pointerAngle - (currentAngle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
@@ -832,7 +910,7 @@ function removeWinnerAndClose() {
     closeWinnerModal();
 }
 
-// 2. TACHAR OPCIÓN (Se queda en la lista pero se elimina de la ruleta)
+// 2. TACHAR OPCIÓN (Permanece en la lista pero queda 100% excluida de la ruleta)
 function strikeWinnerAndClose() {
     if (lastWinningItem) {
         const found = entries.find(e => e.text.trim() === lastWinningItem && !e.struck);
@@ -927,3 +1005,4 @@ window.addEventListener("DOMContentLoaded", () => {
     setupHiDPI();
     renderEditor();
 });
+
