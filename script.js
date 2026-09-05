@@ -15,46 +15,54 @@ const PALETTE = [
 ];
 
 const RETOS_PRESET = [
-    'El "yo nunca, nunca" (haz 3 rondas con el grupo)',
+    'El "yo nunca, nunca"',
     'Pide al chat un consejo para superar el desamor',
-    'Actúa una escena dramática de telenovela con alguien de la llamada',
-    'Di el consejo más tóxico y divertido que se te ocurra',
-    'Confiesa la mayor locura que hiciste por amor',
-    'Dedica un mensaje provocador al aire sin decir nombres',
-    'Canta a todo pulmón el coro de una canción de despecho',
-    'Describe cómo sería tu cita absolutamente catastrófica',
-    'Baila 20 segundos con estilo exagerado y divertido',
-    'Comparte una anécdota vergonzosa que nunca antes hayas contado',
-    'Haz como si hablaras con tu crush por teléfono exagerando todo',
-    'Deja que el chat te haga 2 preguntas incómodas y respóndelas sin filtro',
-    'Deja que el grupo elija un castigo o reto para ti sin poder negarte',
-    'Muestra la última foto guardada en tu galería del celular',
-    'Improvisa una conversación de primera cita coqueta con alguien de la llamada',
-    'Ronda rápida: cada persona dice algo atrevido; el que dude 3 segundos, bebe o castigo',
-    'Envía un emoji de fuego o corazón a la 3ra persona en tus chats recientes',
-    'Di en voz alta quién de la llamada te parece más atractivo/a',
-    'Pregunta comprometedora del grupo: solo puedes contestar "SÍ" o "NO"',
-    'Publica una encuesta absurda o picante en tus historias de Instagram',
-    'Adopta una pose de modelo frente a la cámara durante 10 segundos',
-    'Imita el movimiento de baile más sensual que recuerdes',
-    'Ponte una prenda al revés o un accesorio ridículo por el resto de la ronda',
-    'Lee en voz alta con tono seductor una noticia o receta aburrida',
-    'Haz una llamada de 10 segundos a un amigo y dile que te vas a casar mañana',
-    'Intenta hacer reír al grupo en 30 segundos sin hablar, solo gestos',
-    'Muestra tu historial de búsqueda reciente de YouTube o TikTok',
-    'Dile un piropo original y exagerado a alguien del grupo',
-    'Haz 10 sentadillas o flexiones en vivo',
-    'Imita a un streamer o personaje famoso hasta que adivinen quién es',
-    'Habla con acento extranjero durante las próximas 2 rondas',
-    'Muestra el meme más random o bizarro que tengas en el celular',
-    'Cuenta el sueño más extraño que hayas tenido recientemente',
-    'Tómate una foto haciendo una cara graciosa y compártela',
-    'Di 3 cualidades positivas y 1 crítica constructiva a alguien de la llamada',
-    'Envía un mensaje de voz cantando a un contacto al azar',
-    'Bebe un trago o shot sin usar las manos',
-    'Escribe un mensaje en rima dedicado al chat',
-    'Muestra el objeto más raro o curioso que tengas en tu habitación',
-    'Haz una declaración de amor épica y cómica a un objeto inanimado'
+    'Actúa una escena dramática con otra persona de la llamada',
+    'Di el consejo mas tóxico que se te ocurra',
+    'Confiesa tu locura más grande por el/la ex',
+    'Mensaje provocador al aire',
+    'Canción q te recuerde de tu ex',
+    'Canta una canción de desamor',
+    'Recrea un drama',
+    'Pregunta incomoda sobre su vida amorosa',
+    'Cuenta lo más tóxico que hayas hecho en una relación.',
+    'Mensaje atrevido para el/la ex',
+    'Pide al chat el consejo más tóxico',
+    'Cuenta una experiencia dolida',
+    'Cuenta la anécdota más intensa o vergonzosa que tengas con un ex',
+    'DM atrevido',
+    'Dime 3 cosas que hiciste x amor q te arrepientes',
+    'Describe como seria tu cita catastrófica',
+    'Baile huayno',
+    'Comparte una experiencia romántica o atrevida que nunca hayas contado. Si no lo haces, ¡doble shot!',
+    'Haz como si estuvieras hablando con tu crush en voz alta, exagerando todo. Si no lo haces, ¡castigo!',
+    'Deja que el público o chat te hagan preguntas subidas de tono. Si no respondes, ¡shot obligatorio!',
+    'Deja que el grupo decida un reto para ti, sin poder negarte.',
+    'Di el mayor secreto que guardas sobre tus relaciones pasadas o presentes. Si no lo haces, ¡triple trago!',
+    'Pretende que estás en una cita con alguien de la llamada e improvisen una conversación coqueta.',
+    'Cada participante debe decir algo más atrevido que el anterior. El que se quede sin ideas, ¡bebe!',
+    'Deja que alguien elija un mensaje que deberás enviar a una persona al azar de tu lista.',
+    'Di quién en la llamada te parece más atractivo. Si no te atreves, ¡doble castigo!',
+    'Alguien te pregunta algo comprometedor y solo puedes responder "sí" o "no". Si no lo haces, ¡bebe!',
+    'Sube algo con doble sentido en tus historias o redes sociales. Si no lo haces, ¡bebida doble!',
+    'Envía un mensaje atrevido a un contacto de tus redes. Si no lo haces, ¡castigo triple!',
+    'Di en voz alta quién es tu crush (puede ser famoso o alguien conocido). Si no lo haces, ¡shot!',
+    'Busca en redes a tu crush o ex y describe algo gracioso o extraño de su perfil.',
+    'Escribe algo absurdo o picante en tu historia de Instagram.',
+    'Adopta una pose sexy frente a la cámara por 10 segundos. Si te da pena, ¡shot!',
+    'Imitar el movimiento más sensual que hayas visto en una película o serie. Si no logras impresionar, ¡bebe!',
+    'Ponte algo que normalmente nunca usarías en público.',
+    'Haz una actuación breve como si estuvieras en una escena romántica exagerada con alguien de la llamada. Si no lo haces, ¡shot!',
+    'Di una frase al azar (puede ser algo absurdo) usando tu tono más seductor. Si no lo logras, ¡bebida!',
+    'Simula cómo actuarías si estuvieras en una cita terrible. Si no haces reír, ¡castigo!',
+    'Haz tu mejor intento de imitar una escena icónica de película romántica con alguien del grupo.',
+    'Hazle a cada participante una pregunta subidita de tono que deben contestar o beber.',
+    'Cuenta algo atrevido que hayas pensado recientemente. Si no lo haces, toma un shot.',
+    'Envía un mensaje sugerente a alguien que te guste. Si no te atreves, ¡doble shot!',
+    '¿Qué es lo más loco o atrevido que has hecho en una cita? Si no contestas, ¡bebe tres tragos!',
+    'Di algo que nunca hayas contado a nadie, relacionado con tus relaciones. Si no lo haces, ¡shot obligatorio!',
+    'Deja que alguien del grupo te haga una pregunta personal y contesta con total honestidad. Si no lo haces, ¡castigo doble!',
+    'Escribele a tu crush'
 ];
 
 const VERDAD_PRESET = [
@@ -91,16 +99,30 @@ const VERDAD_PRESET = [
 ];
 
 // ==========================================================================
-// ESTADO GLOBAL
+// ESTADO GLOBAL & ALMACENAMIENTO DE SESIÓN
 // ==========================================================================
-let currentTemplate = localStorage.getItem("roulette_active_template") || "retos";
-let entries = loadSavedEntries(currentTemplate);
+// Siempre inicializa con las plantillas completas por defecto al abrir o recargar la página
+const sessionEntries = {
+    retos: RETOS_PRESET.map(text => ({ text, struck: false })),
+    verdad: VERDAD_PRESET.map(text => ({ text, struck: false }))
+};
+
+// Limpiar datos antiguos de localStorage para asegurar inicio limpio de plantillas
+try {
+    localStorage.removeItem("roulette_entries");
+    localStorage.removeItem("roulette_entries_retos");
+    localStorage.removeItem("roulette_entries_verdad");
+    localStorage.removeItem("roulette_active_template");
+} catch (e) {}
+
+let currentTemplate = "retos";
+let entries = sessionEntries[currentTemplate];
 let currentAngle = 0;
 let isSpinning = false;
 let soundEnabled = JSON.parse(localStorage.getItem("roulette_sound") ?? "true");
 let lastWinningItem = null;
 
-// Registro de elementos ya seleccionados para evitar repeticiones antes de completar el ciclo
+// Registro de elementos ya seleccionados en la sesión para evitar repeticiones
 let playedHistory = {
     retos: [],
     verdad: []
@@ -113,63 +135,24 @@ centerFaceImg.onload = () => {
     drawWheel();
 };
 
-function getStorageKey(template) {
-    return `roulette_entries_${template}`;
-}
-
-function loadSavedEntries(template = currentTemplate) {
-    const key = getStorageKey(template);
-    try {
-        const savedRaw = localStorage.getItem(key);
-        if (savedRaw) {
-            const saved = JSON.parse(savedRaw);
-            if (Array.isArray(saved) && saved.length > 0) {
-                const isOldNumberList = saved.every((item, idx) => {
-                    const text = typeof item === "string" ? item : item.text;
-                    return text === String(idx + 1);
-                });
-                if (!isOldNumberList) {
-                    return saved.map(e => (typeof e === "string" ? { text: e, struck: false } : { text: e.text, struck: Boolean(e.struck) }));
-                }
-            }
-        }
-    } catch (e) {
-        console.warn("Error loading entries from localStorage:", e);
-    }
-
-    // Si no existía para este template específico, cargar su preset inicial limpio
-    const preset = template === "verdad" ? VERDAD_PRESET : RETOS_PRESET;
-    const initial = preset.map(text => ({ text, struck: false }));
-    try {
-        localStorage.setItem(key, JSON.stringify(initial));
-    } catch (e) {}
-    return initial;
-}
-
 function saveCurrentEntries() {
-    const key = getStorageKey(currentTemplate);
-    try {
-        localStorage.setItem(key, JSON.stringify(entries));
-    } catch (e) {
-        console.warn("Error saving entries to localStorage:", e);
-    }
+    sessionEntries[currentTemplate] = entries;
 }
 
 function loadTemplate(type) {
     if (isSpinning) return;
     if (currentTemplate === type) return;
     
-    // 1. Guardar estado actual del template que se está dejando
+    // 1. Guardar estado actual del template activo (con sus tachados durante la sesión)
     saveCurrentEntries();
     
     // 2. Cambiar al nuevo template
     currentTemplate = type;
-    localStorage.setItem("roulette_active_template", type);
 
-    // 3. Cargar las entradas guardadas del nuevo template con sus tachados intactos
-    entries = loadSavedEntries(type);
+    // 3. Cargar las entradas del template destino con sus tachados de esta sesión
+    entries = sessionEntries[type] || (type === "verdad" ? VERDAD_PRESET : RETOS_PRESET).map(text => ({ text, struck: false }));
 
-    // 4. Actualizar interfaz
+    // 4. Actualizar selector visual y renderizar
     updateTemplateUI();
     renderEditor();
 }
